@@ -1,5 +1,4 @@
-const { Int32 } = require('bson');
-const { Schema, model} = require('mongoose');
+import { Schema, model } from 'mongoose';
 
 const ProductoSchema = Schema ({
     nombre: {
@@ -25,4 +24,4 @@ ProductoSchema.methods.toJSON = function(){
     return producto;
 }
 
-module.exports = model('Producto', ProductoSchema);
+export default model('Producto', ProductoSchema);

@@ -1,10 +1,10 @@
-const { Router } = require('express');
-const { check } = require('express-validator');
+import { Router } from 'express';
+import { check } from 'express-validator';
 
-const { validarCampos } = require('../middlewares/validar-campos');
-const { existenteEmail, existeUsuarioById } = require('../helpers/db-validators');
+import { validarCampos } from '../middlewares/validar-campos.js';
+import { existenteEmail, existeUsuarioById } from '../helpers/db-validators.js';
 
-const { usuariosPost, usuariosGet, getUsuarioByid, usuariosPut, usuariosPutRole, usuariosDelete, usuariosClientDelete, usuariosClientPut, usuariosLogin } = require('../controllers/user.controller');
+import { usuariosPost, usuariosGet, getUsuarioByid, usuariosPut, usuariosPutRole, usuariosDelete, usuariosClientDelete, usuariosClientPut, usuariosLogin } from './user.controller.js';
 
 const router = Router();
 
@@ -72,4 +72,4 @@ router.put(
         check('correo', 'Este correo no sirve').isEmail(),
     ], usuariosClientPut);
 
-module.exports = router;
+export default router;

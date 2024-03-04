@@ -1,8 +1,7 @@
-const { response } = require('express');
-const bcryptjs = require('bcryptjs');
-const jwt = require("jsonwebtoken");
-const Usuario = require('../models/usuario');
-const { generarJWT } = require("../helpers/generar-jwt");
+import { response } from 'express';
+import bcryptjs from 'bcryptjs';
+import Usuario from './usuario.model.js';
+import { generarJWT } from "../helpers/generar-jwt.js";
 
 const usuariosGet = async (req, res = response) => {
     const { limite, desde } = req.query;
@@ -207,7 +206,7 @@ const usuariosLogin = async (req, res) => {
 
 }
 
-module.exports = {
+export {
     usuariosDelete,
     usuariosPost,
     usuariosGet,
