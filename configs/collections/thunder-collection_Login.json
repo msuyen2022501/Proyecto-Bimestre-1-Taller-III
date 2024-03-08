@@ -1,0 +1,28 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Login",
+    "dateExported": "2024-03-08T02:24:30.168Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "b2930ad6-cbe7-4f51-9c72-1631d356dd70",
+            "colId": "dec6b66c-48ae-4773-8143-a7de8a90a1ac",
+            "containerId": "",
+            "name": "usuarioLogin",
+            "url": "http://localhost:1000/empresa/v1/users/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-08T00:12:15.211Z",
+            "modified": "2024-03-08T02:22:36.260Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"correo\" : \"Mario@email.com\",\n  \"password\" : \"123456\"\n  \n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

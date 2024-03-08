@@ -1,88 +1,112 @@
 {
     "client": "Thunder Client",
     "collectionName": "Usuarios",
-    "dateExported": "2024-02-19T05:18:51.578Z",
+    "dateExported": "2024-03-08T02:24:08.545Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "36eb2130-8832-4efd-9a45-43790ffd536e",
-            "colId": "aa707ead-d8d7-4413-abc2-c01f2d730ffe",
+            "_id": "3a8b5c1f-74bf-4ff0-b551-9f04f8426e69",
+            "colId": "f707947d-a8b0-4ecb-9f3f-869c249126fd",
             "containerId": "",
             "name": "usuariosPost",
-            "url": "http://localhost:1000/proyecto-final/usuarios",
+            "url": "http://localhost:1000/empresa/v1/users",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-02-19T04:35:50.670Z",
-            "modified": "2024-02-19T04:43:30.642Z",
+            "created": "2024-03-07T23:57:10.230Z",
+            "modified": "2024-03-08T00:20:53.367Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\":\"admin2\",\n  \"correo\":\"admin2@email.com\",\n  \"password\":\"123456\"\n}",
+                "raw": "{\n  \"nombre\":\"Mario\",\n  \"correo\":\"Mario@email.com\",\n  \"password\":\"123456\"\n}",
                 "form": []
             },
+            "reqType": "post",
             "tests": []
         },
         {
-            "_id": "2440fc47-040f-4b9b-81f7-79ffa601bb72",
-            "colId": "aa707ead-d8d7-4413-abc2-c01f2d730ffe",
+            "_id": "2ae23295-206e-4641-b416-97eb09fd54a9",
+            "colId": "f707947d-a8b0-4ecb-9f3f-869c249126fd",
             "containerId": "",
             "name": "usuariosGet",
-            "url": "http://localhost:1000/proyecto-final/usuarios",
+            "url": "http://localhost:1000/empresa/v1/users",
             "method": "GET",
             "sortNum": 20000,
-            "created": "2024-02-19T04:37:28.332Z",
-            "modified": "2024-02-19T04:37:37.846Z",
+            "created": "2024-03-07T23:57:10.231Z",
+            "modified": "2024-03-08T00:04:33.206Z",
             "headers": [],
             "params": [],
+            "reqType": "get",
             "tests": []
         },
         {
-            "_id": "7002b8f2-d914-437f-b71d-621dd92e0b37",
-            "colId": "aa707ead-d8d7-4413-abc2-c01f2d730ffe",
+            "_id": "e95a42e8-fc41-4ca4-a853-45375e74b0d2",
+            "colId": "f707947d-a8b0-4ecb-9f3f-869c249126fd",
             "containerId": "",
-            "name": "getUsuarioById",
-            "url": "http://localhost:1000/proyecto-final/usuarios/65d2daf98d7bd5269fc1fa4a",
-            "method": "GET",
-            "sortNum": 30000,
-            "created": "2024-02-19T04:38:01.708Z",
-            "modified": "2024-02-19T04:38:16.797Z",
-            "headers": [],
-            "params": [],
-            "tests": []
-        },
-        {
-            "_id": "4ef31e52-3fcb-46f2-8133-58c67af8ee4f",
-            "colId": "aa707ead-d8d7-4413-abc2-c01f2d730ffe",
-            "containerId": "",
-            "name": "usuariosPut",
-            "url": "http://localhost:1000/proyecto-final/usuarios/65d2daf98d7bd5269fc1fa4a",
+            "name": "rolePut",
+            "url": "http://localhost:1000/empresa/v1/users/role/65d2dc64fe39abed2c8c7505",
             "method": "PUT",
             "sortNum": 40000,
-            "created": "2024-02-19T04:38:34.859Z",
-            "modified": "2024-02-19T04:49:13.816Z",
-            "headers": [],
+            "created": "2024-03-07T23:57:10.233Z",
+            "modified": "2024-03-08T02:13:04.292Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhNWE0MjIwMzM2N2UxMGVkY2M0MWYiLCJpYXQiOjE3MDk4NTc4OTMsImV4cCI6MTcwOTg2MTQ5M30.URVd0N5vZFgses6AUxgoWjlJBOMTbEMDLKQSj7U0BCY"
+                }
+            ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\":\"superAdmin\",\n  \"admin\":\"admin@email.com\"\n}",
+                "raw": "{\r\n    \"role\": \"ADMIN_ROLE\",\r\n    \"correoUsuario\": \"admin2@email.com\"\r\n}\r\n",
                 "form": []
             },
+            "reqType": "put",
             "tests": []
         },
         {
-            "_id": "dfbaa8ba-a1ec-49d3-a223-527a50c47b58",
-            "colId": "aa707ead-d8d7-4413-abc2-c01f2d730ffe",
+            "_id": "5b806567-4498-4d50-939f-9479e2fff2ec",
+            "colId": "f707947d-a8b0-4ecb-9f3f-869c249126fd",
             "containerId": "",
-            "name": "usuarioDelete",
-            "url": "http://localhost:1000/proyecto-final/usuarios/65d2daf98d7bd5269fc1fa4a",
+            "name": "usuariosDelete",
+            "url": "http://localhost:1000/empresa/v1/users/65ea7664f55e0de916da99ba",
             "method": "DELETE",
             "sortNum": 50000,
-            "created": "2024-02-19T05:03:05.748Z",
-            "modified": "2024-02-19T05:03:50.232Z",
-            "headers": [],
+            "created": "2024-03-07T23:57:10.234Z",
+            "modified": "2024-03-08T02:22:57.617Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhNzY2NGY1NWUwZGU5MTZkYTk5YmEiLCJpYXQiOjE3MDk4NjQ1NTYsImV4cCI6MTcwOTg2ODE1Nn0.FkpSLnIneTyAIralNpUQAMl8PbNSqpvPJ2nP7b5dG-g"
+                }
+            ],
             "params": [],
+            "reqType": "del",
+            "tests": []
+        },
+        {
+            "_id": "52d4662b-e0f3-41c3-8e22-8e26f3963e48",
+            "colId": "f707947d-a8b0-4ecb-9f3f-869c249126fd",
+            "containerId": "",
+            "name": "usuariosPut",
+            "url": "http://localhost:1000/empresa/v1/users/65ea5a42203367e10edcc41f",
+            "method": "PUT",
+            "sortNum": 60000,
+            "created": "2024-03-08T01:23:43.450Z",
+            "modified": "2024-03-08T02:20:48.428Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhNWE0MjIwMzM2N2UxMGVkY2M0MWYiLCJpYXQiOjE3MDk4NjEzNzksImV4cCI6MTcwOTg2NDk3OX0.aPkcrzkn0bD6PT3kXQQCJ5NinYrDVs2J5LqMrvPf7ao"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"correo\": \"Mario123@email.com\",\r\n    \"nombre\": \"Nuevo nombre\",\r\n    \"password\": \"123456\"\r\n}\r\n",
+                "form": []
+            },
             "tests": []
         }
     ]

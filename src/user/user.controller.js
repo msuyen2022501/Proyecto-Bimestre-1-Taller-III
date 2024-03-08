@@ -1,6 +1,8 @@
 import { response } from 'express';
 import bcryptjs from 'bcryptjs';
-import Usuario from './usuario.model.js';
+import mongoose from 'mongoose';
+
+import Usuario from './user.model.js';
 import { generarJWT } from "../helpers/generar-jwt.js";
 
 const usuariosGet = async (req, res = response) => {
@@ -20,71 +22,48 @@ const usuariosGet = async (req, res = response) => {
     });
 }
 
-const getUsuarioByid = async (req, res) => {
-    const { id } = req.params;
-    const usuario = await Usuario.findOne({ _id: id });
-
-    res.status(200).json({
-        usuario
-    });
-}
-
-const usuariosPut = async (req, res) => {
-    const { id } = req.params;
-    const { admin } = req.body;
-
-    const Admin = await Usuario.findOne({ correo: admin });
-
-    if (!Admin || Admin.role !== "ADMIN_ROLE") {
-        return res.status(400).json({
-            msg: 'El usuario administrador no existe o no tiene permisos para esta acción'
-        });
-    }
-
-    const usuario = await Usuario.findByIdAndUpdate(id, { role: "ADMIN_ROLE" });
-
-    res.status(200).json({
-        msg: 'Usuario actualizado',
-    });
-}
-
 const usuariosPutRole = async (req, res) => {
     const { id } = req.params;
-    const { role, admin } = req.body;
+    const { role, correoUsuario } = req.body;
 
-    const Admin = await Usuario.findOne({ correo: admin });
+    const usuarioSolicitante = await Usuario.findOne({ correo: correoUsuario });
 
-    if (!Admin || Admin.role !== "ADMIN_ROLE") {
+    if (!usuarioSolicitante) {
         return res.status(400).json({
-            msg: 'El usuario administrador no existe o no tiene permisos para esta acción'
+            msg: 'El usuario que realiza la solicitud no existe'
         });
     }
+
+    const usuarioAntes = await Usuario.findById(id);
 
     const usuario = await Usuario.findByIdAndUpdate(id, { role });
 
     res.status(200).json({
         msg: 'Rol del usuario actualizado',
-        usuario
+        usuario: {
+            nombre: usuario.nombre,
+            correo: usuario.correo,
+            roleAnterior: usuarioAntes.role,
+            roleNuevo: role
+        }
     });
 }
 
+
 const usuariosDelete = async (req, res) => {
     const { id } = req.params;
-    const { admin } = req.body;
 
-    const Admin = await Usuario.findOne({ correo: admin });
+    try {
+        await Usuario.findByIdAndUpdate(id, { estado: false });
 
-    if (!Admin || Admin.role !== "ADMIN_ROLE") {
-        return res.status(400).json({
-            msg: 'El usuario administrador no existe o no tiene permisos para esta acción'
+        res.status(200).json({
+            msg: 'Usuario eliminado'
+        });
+    } catch (error) {
+        res.status(500).json({
+            msg: 'Hubo un error al eliminar el usuario'
         });
     }
-
-    await Usuario.findByIdAndUpdate(id, { estado: false });
-
-    res.status(200).json({
-        msg: 'Usuario eliminado'
-    });
 }
 
 const usuariosPost = async (req, res) => {
@@ -101,64 +80,42 @@ const usuariosPost = async (req, res) => {
     });
 }
 
-const usuariosClientPut = async (req, res) => {
+const usuariosPut = async (req, res) => {
     const { id } = req.params;
-    const { admin, cliente, ...resto } = req.body;
 
-    const client = await Usuario.findById(cliente);
-    const usuario = await Usuario.findById(id);
-
-    if (!usuario) {
+    if (!mongoose.Types.ObjectId.isValid(id)) {
         return res.status(400).json({
-            msg: 'El usuario a editar no existe'
+            msg: 'El ID proporcionado no es válido'
         });
     }
 
-    if (client.correo !== cliente) {
-        return res.status(400).json({
-            msg: 'El correo asignado no coincide con el token proporcionado'
-        })
-    }
+    try {
+        const usuario = await Usuario.findById(id);
 
-    if (client.role === "CLIENT_ROLE") {
-        const { password, google, role, ...restoCliente } = resto;
-        await Usuario.findByIdAndUpdate(id, restoCliente);
-    } else {
-        await Usuario.findByIdAndUpdate(id, resto);
-    }
+        if (!usuario) {
+            return res.status(400).json({
+                msg: 'El usuario a editar no existe'
+            });
+        }
 
-    res.status(200).json({
-        msg: 'Usuario actualizado'
-    });
-}
+        const { nombre: nombreAnterior, correo: correoAnterior, password: passwordAnterior } = usuario;
 
-const usuariosClientDelete = async (req, res) => {
-    const { id } = req.params;
-    const { cliente } = req.body;
+        await Usuario.findByIdAndUpdate(id, req.body);
 
-    const client = await Usuario.findById(cliente);
-    const usuario = await Usuario.findById(id);
+        const usuarioActualizado = await Usuario.findById(id);
+        const { nombre: nombreNuevo, correo: correoNuevo, password: passwordNuevo } = usuarioActualizado;
 
-    if (!usuario) {
-        return res.status(400).json({
-            msg: 'El usuario a eliminar no existe'
-        });
-    }
-
-    if (client.correo !== cliente) {
-        return res.status(400).json({
-            msg: 'El correo asignado no coincide con el token proporcionado'
-        })
-    }
-
-    if (client.role === "CLIENT_ROLE") {
-        await Usuario.findByIdAndUpdate(id, { estado: false });
         res.status(200).json({
-            msg: 'Usuario eliminado'
+            msg: 'Información del usuario actualizada',
+            cambios: {
+                nombre: { anterior: nombreAnterior, nuevo: nombreNuevo },
+                correo: { anterior: correoAnterior, nuevo: correoNuevo },
+                password: { anterior: passwordAnterior, nuevo: passwordNuevo }
+            }
         });
-    } else {
-        return res.status(400).json({
-            msg: 'No tienes permiso para eliminar este usuario'
+    } catch (error) {
+        res.status(500).json({
+            msg: 'Hubo un error al actualizar la información del usuario'
         });
     }
 }
@@ -210,10 +167,7 @@ export {
     usuariosDelete,
     usuariosPost,
     usuariosGet,
-    getUsuarioByid,
     usuariosPut,
     usuariosLogin,
-    usuariosPutRole,
-    usuariosClientDelete,
-    usuariosClientPut
+    usuariosPutRole
 }
