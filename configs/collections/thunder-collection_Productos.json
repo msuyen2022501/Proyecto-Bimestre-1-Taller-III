@@ -1,74 +1,73 @@
 {
     "client": "Thunder Client",
     "collectionName": "Productos",
-    "dateExported": "2024-03-08T06:51:09.364Z",
+    "dateExported": "2024-03-08T14:11:49.661Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "d2158f8b-be3b-44d6-ad72-d33cf5e9aae0",
-            "colId": "fa725dda-e0cf-4989-9880-0f17ca18e391",
+            "_id": "15ca8c9c-9d95-4d46-af30-33c5636a6a60",
+            "colId": "140f5837-9db9-4870-8125-88b1aee4af86",
             "containerId": "",
             "name": "productosPost",
             "url": "http://localhost:1000/empresa/v1/products",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-03-07T23:57:10.207Z",
-            "modified": "2024-03-08T06:27:25.449Z",
+            "created": "2024-03-08T13:32:20.510Z",
+            "modified": "2024-03-08T13:36:51.930Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\": \"anillos 2\",\n  \"categoria\": \"Joyería artesanal\",\n  \"stock\": \"0\"\n}",
+                "raw": "{\n  \"nombre\": \"anillos\",\n  \"categoria\": \"Joyería artesanal\",\n  \"stock\": \"0\"\n}",
                 "form": []
             },
             "reqType": "post",
             "tests": []
         },
         {
-            "_id": "b0fada59-9409-444c-b96e-1bdb3001b573",
-            "colId": "fa725dda-e0cf-4989-9880-0f17ca18e391",
+            "_id": "ecbda482-e497-466a-8289-6cb6aeacd2dd",
+            "colId": "140f5837-9db9-4870-8125-88b1aee4af86",
             "containerId": "",
             "name": "productosGet",
             "url": "http://localhost:1000/empresa/v1/products",
             "method": "GET",
             "sortNum": 20000,
-            "created": "2024-03-07T23:57:10.208Z",
-            "modified": "2024-03-08T02:44:43.585Z",
+            "created": "2024-03-08T13:32:20.511Z",
+            "modified": "2024-03-08T13:32:20.511Z",
             "headers": [],
             "params": [],
-            "reqType": "get",
             "tests": []
         },
         {
-            "_id": "91717868-2b6f-4b31-adfc-46e7e691d78f",
-            "colId": "fa725dda-e0cf-4989-9880-0f17ca18e391",
+            "_id": "1106da8e-81de-4a0b-a151-c403c33d8154",
+            "colId": "140f5837-9db9-4870-8125-88b1aee4af86",
             "containerId": "",
             "name": "getProductosById",
-            "url": "http://localhost:1000/empresa/v1/products/65ea7b5137ee87a21df6d12d",
+            "url": "http://localhost:1000/empresa/v1/products/65eb14798a600474b9f59fcd",
             "method": "GET",
             "sortNum": 30000,
-            "created": "2024-03-07T23:57:10.209Z",
-            "modified": "2024-03-08T05:15:35.870Z",
+            "created": "2024-03-08T13:32:20.512Z",
+            "modified": "2024-03-08T14:00:28.912Z",
             "headers": [],
             "params": [],
             "reqType": "get",
             "tests": []
         },
         {
-            "_id": "1c23ed50-df98-4d25-8af6-3062bdd8d4d1",
-            "colId": "fa725dda-e0cf-4989-9880-0f17ca18e391",
+            "_id": "ca7b576c-d941-45a9-ab3e-813e7f95aa96",
+            "colId": "140f5837-9db9-4870-8125-88b1aee4af86",
             "containerId": "",
             "name": "productosPut",
-            "url": "http://localhost:1000/empresa/v1/products/65ea7d94e468409f0502572c",
+            "url": "http://localhost:1000/empresa/v1/products/65eb14798a600474b9f59fcd",
             "method": "PUT",
-            "sortNum": 50000,
-            "created": "2024-03-07T23:57:10.210Z",
-            "modified": "2024-03-08T06:05:59.756Z",
+            "sortNum": 35000,
+            "created": "2024-03-08T13:32:20.513Z",
+            "modified": "2024-03-08T13:37:20.409Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhN2U2YmU3Y2E2ODYwNzMxNTYyMmIiLCJpYXQiOjE3MDk4NzUxODcsImV4cCI6MTcwOTg3ODc4N30.P7wcYdOYLV6cfoASdKlzxGSUGA_pOCKbZ5PXYyGlRg0"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViMTM5NjhhNjAwNDc0YjlmNTlmYWUiLCJpYXQiOjE3MDk5MDQ4OTIsImV4cCI6MTcwOTkwODQ5Mn0.ZKVsGimwvHYq8utm-MDXFMlrUDYZSUEpgckPzV2pTBc"
                 }
             ],
             "params": [],
@@ -81,37 +80,57 @@
             "tests": []
         },
         {
-            "_id": "920d3db6-8e6d-4dce-ab1d-324fd6077525",
-            "colId": "fa725dda-e0cf-4989-9880-0f17ca18e391",
+            "_id": "97b16f1a-72b9-4c6d-8805-f0441d4288ca",
+            "colId": "140f5837-9db9-4870-8125-88b1aee4af86",
             "containerId": "",
             "name": "productosAgotados",
-            "url": "http://localhost:1000/empresa/v1/products/exhausted",
-            "method": "GET",
-            "sortNum": 60000,
-            "created": "2024-03-07T23:57:10.211Z",
-            "modified": "2024-03-08T06:46:54.173Z",
-            "headers": [],
+            "url": "http://localhost:1000/empresa/v1/products/productosAgotados",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-03-08T13:32:20.514Z",
+            "modified": "2024-03-08T14:03:08.833Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViMTM5NjhhNjAwNDc0YjlmNTlmYWUiLCJpYXQiOjE3MDk5MDQ4OTIsImV4cCI6MTcwOTkwODQ5Mn0.ZKVsGimwvHYq8utm-MDXFMlrUDYZSUEpgckPzV2pTBc"
+                }
+            ],
             "params": [],
             "reqType": "get",
             "tests": []
         },
         {
-            "_id": "f50a0359-c191-4c7f-be4d-ab7c0bbd8c53",
-            "colId": "fa725dda-e0cf-4989-9880-0f17ca18e391",
+            "_id": "55372d14-f389-4292-af70-c2a9601ec966",
+            "colId": "140f5837-9db9-4870-8125-88b1aee4af86",
+            "containerId": "",
+            "name": "productosMasVendidos",
+            "url": "http://localhost:1000/empresa/v1/products/productosMasVendidos",
+            "method": "POST",
+            "sortNum": 45000,
+            "created": "2024-03-08T13:50:06.976Z",
+            "modified": "2024-03-08T14:00:46.213Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d035828c-3b2f-4950-8069-84f8815bcdd9",
+            "colId": "140f5837-9db9-4870-8125-88b1aee4af86",
             "containerId": "",
             "name": "productosDelete",
-            "url": "http://localhost:1000/empresa/v1/products/65ea7d96e468409f0502572f",
+            "url": "http://localhost:1000/empresa/v1/products/65eb14798a600474b9f59fcd",
             "method": "DELETE",
             "sortNum": 70000,
-            "created": "2024-03-08T05:20:57.695Z",
-            "modified": "2024-03-08T05:22:39.191Z",
+            "created": "2024-03-08T13:32:20.515Z",
+            "modified": "2024-03-08T13:37:51.034Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhN2U2YmU3Y2E2ODYwNzMxNTYyMmIiLCJpYXQiOjE3MDk4NzUxODcsImV4cCI6MTcwOTg3ODc4N30.P7wcYdOYLV6cfoASdKlzxGSUGA_pOCKbZ5PXYyGlRg0"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViMTM5NjhhNjAwNDc0YjlmNTlmYWUiLCJpYXQiOjE3MDk5MDQ4OTIsImV4cCI6MTcwOTkwODQ5Mn0.ZKVsGimwvHYq8utm-MDXFMlrUDYZSUEpgckPzV2pTBc"
                 }
             ],
             "params": [],
+            "reqType": "del",
             "tests": []
         }
     ]

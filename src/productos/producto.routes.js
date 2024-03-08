@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { check } from "express-validator";
+import { check } from "express-validator"; // Asegúrate de importar 'check' de 'express-validator'
 import { validarCampos } from "../middlewares/validar-campos.js";
 import {
   productoPost,
@@ -7,7 +7,8 @@ import {
   getProductosByid,
   productosPut,
   productosDelete,
-  exhausted
+  productosAgotados,
+  productosMasVendidos
 } from "./producto.controller.js";
 import {
   productoExistente,
@@ -28,6 +29,10 @@ router.get(
   ],
   getProductosByid
 );
+
+router.post('/productosAgotados', validarJWT, productosAgotados); 
+
+router.post('/productosMasVendidos', validarJWT, productosMasVendidos);
 
 router.put(
   "/:id",
@@ -61,7 +66,5 @@ router.post(
   ],
   productoPost
 );
-
-router.get('/exhausted', validarJWT, exhausted)
 
 export default router;

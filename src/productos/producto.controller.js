@@ -104,16 +104,41 @@ const productoPost = async (req, res) => {
     }
 }
 
-const exhausted = async (req, res) => {
+const productosAgotados = async (req, res) => {
     try {
-        let data = await Producto.findOne({ stock: 0 }).populate('category')
-        if (!data) return res.status(444).send({ message: "there are no products out of stock" })
-        return res.send({ data })
+        const productosAgotados = await Producto.find({ stock: 0 });
+
+        if (productosAgotados.length === 0) {
+            return res.status(404).json({ message: "No hay productos sin stock." });
+        }
+
+        return res.status(200).json({ productosAgotados });
     } catch (error) {
-        console.error(error)
-        return res.status(500).send({ message: 'the information cannot be brought' })
+        console.error(error);
+        return res.status(500).json({ message: 'Hubo un problema al obtener los productos agotados.' });
     }
 }
+
+
+
+
+const productosMasVendidos = async (req, res) => {
+    try {
+        const productosMasVendidos = await Producto.find()
+            .sort({ cantidadVendida: -1 }) 
+            .limit(10); 
+
+        res.status(200).json({
+            productosMasVendidos
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            msg: 'Hubo un error al obtener los productos más vendidos'
+        });
+    }
+}
+
 
 export {
     productosGet,
@@ -121,5 +146,6 @@ export {
     productoPost,
     getProductosByid,
     productosPut,
-    exhausted
+    productosAgotados,
+    productosMasVendidos
 }
