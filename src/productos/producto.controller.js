@@ -1,4 +1,5 @@
 import Producto from './producto.model.js';
+import { productoExistente } from '../helpers/db-validators.js';
 
 const productosGet = async (req, res = response) => {
     const { limite, desde } = req.query;
@@ -17,52 +18,108 @@ const productosGet = async (req, res = response) => {
     });
 }
 
-const getProductoByid = async (req, res) => {
+const getProductosByid = async (req, res) => {
     const { id } = req.params;
-    const productos = await Producto.findOne({ _id: id });
-
-    res.status(200).json({
-        productos
-    });
+    try {
+        const producto = await Producto.findOne({ _id: id });
+        if (!producto) {
+            return res.status(404).json({
+                msg: 'El producto no existe'
+            });
+        }
+        res.status(200).json({
+            producto
+        });
+    } catch (error) {
+        res.status(500).json({
+            msg: 'Hubo un error al buscar el producto'
+        });
+    }
 }
+
 
 const productosPut = async (req, res) => {
     const { id } = req.params;
-    const { _id, categoria, ...resto } = req.body;
+    const { categoria, ...resto } = req.body;
 
-    const productos = await Producto.existeUsuarioById(id, resto);
+    try {
+        const productoActualizado = await Producto.findByIdAndUpdate(id, resto, { new: true });
 
-    res.status(200).json({
-        msg: 'Productos actualizado',
-        productos
-    })
+        if (!productoActualizado) {
+            return res.status(404).json({
+                msg: 'El producto no existe'
+            });
+        }
+
+        res.status(200).json({
+            msg: 'Producto actualizado',
+            producto: productoActualizado
+        });
+    } catch (error) {
+        res.status(500).json({
+            msg: 'Hubo un error al actualizar el producto'
+        });
+    }
 }
 
 const productosDelete = async (req, res) => {
     const { id } = req.params;
 
-    const productos = await Producto.existeUsuarioById(id, { estado: false });
+    try {
+        const productoEliminado = await Producto.findByIdAndDelete(id);
 
-    res.status(200).json({
-        msg: 'Producto eliminado'
-    });
+        if (!productoEliminado) {
+            return res.status(404).json({
+                msg: 'El producto no existe'
+            });
+        }
+
+        res.status(200).json({
+            msg: 'Producto eliminado'
+        });
+    } catch (error) {
+        res.status(500).json({
+            msg: 'Hubo un error al eliminar el producto'
+        });
+    }
 }
 
 const productoPost = async (req, res) => {
     const { nombre, categoria, stock } = req.body;
 
-    const productos = new Producto({ nombre, categoria, stock });
+    try {
+        await productoExistente(nombre);
 
-    await productos.save();
-    res.status(200).json({
-        productos
-    });
+        const producto = new Producto({ nombre, categoria, stock });
+        await producto.save();
+
+        res.status(200).json({
+            msg: 'Producto agregado correctamente',
+            producto
+        });
+    } catch (error) {
+        res.status(400).json({
+            msg: error.message
+        });
+    }
+}
+
+const exhausted = async (req, res) => {
+    try {
+        let data = await Producto.findOne({ stock: 0 }).populate('category')
+        if (!data) return res.status(444).send({ message: "there are no products out of stock" })
+        return res.send({ data })
+    } catch (error) {
+        console.error(error)
+        return res.status(500).send({ message: 'the information cannot be brought' })
+    }
 }
 
 export {
     productosGet,
     productosDelete,
     productoPost,
-    getProductoByid,
-    productosPut
+    getProductosByid,
+    productosPut,
+    exhausted
 }

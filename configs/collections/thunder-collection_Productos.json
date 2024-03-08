@@ -1,99 +1,117 @@
 {
     "client": "Thunder Client",
     "collectionName": "Productos",
-    "dateExported": "2024-02-19T05:18:45.516Z",
+    "dateExported": "2024-03-08T06:51:09.364Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "30282902-8881-4cea-a848-c186a7441923",
-            "colId": "d5e2dc6e-f81e-44c3-9d7a-10a0135d5f18",
+            "_id": "d2158f8b-be3b-44d6-ad72-d33cf5e9aae0",
+            "colId": "fa725dda-e0cf-4989-9880-0f17ca18e391",
             "containerId": "",
             "name": "productosPost",
-            "url": "http://localhost:1000/proyecto-final/productos",
+            "url": "http://localhost:1000/empresa/v1/products",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-02-19T03:35:02.889Z",
-            "modified": "2024-02-19T04:31:17.864Z",
+            "created": "2024-03-07T23:57:10.207Z",
+            "modified": "2024-03-08T06:27:25.449Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\":\"collares\",\n  \"categoria\":\"Joyería artesanal\",\n  \"stock\":\"1\",\n  \"admin\":\"mario@email.com\"\n  }",
+                "raw": "{\n  \"nombre\": \"anillos 2\",\n  \"categoria\": \"Joyería artesanal\",\n  \"stock\": \"0\"\n}",
                 "form": []
             },
+            "reqType": "post",
             "tests": []
         },
         {
-            "_id": "3f47419b-af55-4af7-972d-742f37795ae0",
-            "colId": "d5e2dc6e-f81e-44c3-9d7a-10a0135d5f18",
+            "_id": "b0fada59-9409-444c-b96e-1bdb3001b573",
+            "colId": "fa725dda-e0cf-4989-9880-0f17ca18e391",
             "containerId": "",
             "name": "productosGet",
-            "url": "http://localhost:1000/proyecto-final/productos",
+            "url": "http://localhost:1000/empresa/v1/products",
             "method": "GET",
             "sortNum": 20000,
-            "created": "2024-02-19T05:09:51.501Z",
-            "modified": "2024-02-19T05:09:56.567Z",
+            "created": "2024-03-07T23:57:10.208Z",
+            "modified": "2024-03-08T02:44:43.585Z",
             "headers": [],
             "params": [],
+            "reqType": "get",
             "tests": []
         },
         {
-            "_id": "3b958f38-e568-4813-8a4f-ee9e6c765fe3",
-            "colId": "d5e2dc6e-f81e-44c3-9d7a-10a0135d5f18",
+            "_id": "91717868-2b6f-4b31-adfc-46e7e691d78f",
+            "colId": "fa725dda-e0cf-4989-9880-0f17ca18e391",
             "containerId": "",
             "name": "getProductosById",
-            "url": "http://localhost:1000/proyecto-final/productos/65d2e28ae634b6ca1a13575d",
+            "url": "http://localhost:1000/empresa/v1/products/65ea7b5137ee87a21df6d12d",
             "method": "GET",
             "sortNum": 30000,
-            "created": "2024-02-19T05:10:12.843Z",
-            "modified": "2024-02-19T05:10:29.732Z",
+            "created": "2024-03-07T23:57:10.209Z",
+            "modified": "2024-03-08T05:15:35.870Z",
             "headers": [],
             "params": [],
+            "reqType": "get",
             "tests": []
         },
         {
-            "_id": "f346f945-437e-4215-a032-f2125b042925",
-            "colId": "d5e2dc6e-f81e-44c3-9d7a-10a0135d5f18",
+            "_id": "1c23ed50-df98-4d25-8af6-3062bdd8d4d1",
+            "colId": "fa725dda-e0cf-4989-9880-0f17ca18e391",
             "containerId": "",
             "name": "productosPut",
-            "url": "http://localhost:1000/proyecto-final/productos/65d2e28ae634b6ca1a13575d",
+            "url": "http://localhost:1000/empresa/v1/products/65ea7d94e468409f0502572c",
             "method": "PUT",
             "sortNum": 50000,
-            "created": "2024-02-19T05:11:25.890Z",
-            "modified": "2024-02-19T05:12:24.863Z",
-            "headers": [],
+            "created": "2024-03-07T23:57:10.210Z",
+            "modified": "2024-03-08T06:05:59.756Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhN2U2YmU3Y2E2ODYwNzMxNTYyMmIiLCJpYXQiOjE3MDk4NzUxODcsImV4cCI6MTcwOTg3ODc4N30.P7wcYdOYLV6cfoASdKlzxGSUGA_pOCKbZ5PXYyGlRg0"
+                }
+            ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\":\"Aretes\",\n  \"stock\":\"13\",\n  \"admin\":\"admin@email.com\"\n}",
+                "raw": "{\n  \"nombre\":\"Cadena\",\n  \"stock\":\"0\"\n}",
                 "form": []
             },
+            "reqType": "put",
             "tests": []
         },
         {
-            "_id": "f808199c-79ce-402a-bd7e-34a509531de4",
-            "colId": "d5e2dc6e-f81e-44c3-9d7a-10a0135d5f18",
+            "_id": "920d3db6-8e6d-4dce-ab1d-324fd6077525",
+            "colId": "fa725dda-e0cf-4989-9880-0f17ca18e391",
             "containerId": "",
             "name": "productosAgotados",
-            "url": "http://localhost:1000/proyecto-final/productos?limite=10&desde=1",
+            "url": "http://localhost:1000/empresa/v1/products/exhausted",
             "method": "GET",
             "sortNum": 60000,
-            "created": "2024-02-19T05:13:27.079Z",
-            "modified": "2024-02-19T05:16:47.794Z",
+            "created": "2024-03-07T23:57:10.211Z",
+            "modified": "2024-03-08T06:46:54.173Z",
             "headers": [],
-            "params": [
+            "params": [],
+            "reqType": "get",
+            "tests": []
+        },
+        {
+            "_id": "f50a0359-c191-4c7f-be4d-ab7c0bbd8c53",
+            "colId": "fa725dda-e0cf-4989-9880-0f17ca18e391",
+            "containerId": "",
+            "name": "productosDelete",
+            "url": "http://localhost:1000/empresa/v1/products/65ea7d96e468409f0502572f",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2024-03-08T05:20:57.695Z",
+            "modified": "2024-03-08T05:22:39.191Z",
+            "headers": [
                 {
-                    "name": "limite",
-                    "value": "10",
-                    "isPath": false
-                },
-                {
-                    "name": "desde",
-                    "value": "1",
-                    "isPath": false
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhN2U2YmU3Y2E2ODYwNzMxNTYyMmIiLCJpYXQiOjE3MDk4NzUxODcsImV4cCI6MTcwOTg3ODc4N30.P7wcYdOYLV6cfoASdKlzxGSUGA_pOCKbZ5PXYyGlRg0"
                 }
             ],
+            "params": [],
             "tests": []
         }
     ]

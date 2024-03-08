@@ -1,5 +1,6 @@
 import Role from '../role/role.model.js';
 import User from '../user/user.model.js';
+import Producto from '../productos/producto.model.js';
 
 export const esRoleValido = async (role = '') => {
     const existeRol = await Role.findOne({ role });
@@ -21,6 +22,22 @@ export const existeUsuarioById = async (id = '') => {
     const existeUsuario = await User.findById(id);
 
     if (!existeUsuario) {
+        throw new Error(`El ID: ${id} No existe`);
+    }
+}
+
+export const productoExistente = async (nombre = '') => {
+    const productoExistente = await Producto.findOne({ nombre });
+
+    if (productoExistente) {
+        throw new Error(`El producto ${nombre} ya ha sido registrado`);
+    }
+}
+
+export const existeProductoById = async (id = '') => {
+    const existeProducto = await Producto.findById(id);
+
+    if (!existeProducto) {
         throw new Error(`El ID: ${id} No existe`);
     }
 }
