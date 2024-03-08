@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { check } from "express-validator"; // Asegúrate de importar 'check' de 'express-validator'
+import { check } from "express-validator";
 import { validarCampos } from "../middlewares/validar-campos.js";
 import {
   productoPost,

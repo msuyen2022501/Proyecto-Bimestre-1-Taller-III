@@ -1,0 +1,90 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Categorias",
+    "dateExported": "2024-03-08T17:20:23.915Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "43a2d245-4224-413c-a2dd-66168d7baa0b",
+            "colId": "94a29025-44de-4d2e-b858-130639b4410a",
+            "containerId": "",
+            "name": "categoriasPost",
+            "url": "http://localhost:1000/empresa/v1/categorias",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-08T14:38:46.539Z",
+            "modified": "2024-03-08T16:32:46.818Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViMTM5NjhhNjAwNDc0YjlmNTlmYWUiLCJpYXQiOjE3MDk5MTQxNzksImV4cCI6MTcwOTkxNzc3OX0.mXfg0MYqDKDu93aPJpQdVi1Q27ntYL2319eiDAByHIY"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombreCategoria\" : \"Joyería artesanal 5\",\n  \"descripcion\": \"Belleza estética de cada pieza\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "c24ed68c-f794-44df-a4f8-5b35b7fb1c3e",
+            "colId": "94a29025-44de-4d2e-b858-130639b4410a",
+            "containerId": "",
+            "name": "categoriasGet",
+            "url": "http://localhost:1000/empresa/v1/categorias",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-03-08T15:06:45.368Z",
+            "modified": "2024-03-08T15:06:50.637Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9b22fd26-e4dd-4705-a116-abe25cacf3c1",
+            "colId": "94a29025-44de-4d2e-b858-130639b4410a",
+            "containerId": "",
+            "name": "categoriasPut",
+            "url": "http://localhost:1000/empresa/v1/categorias/65eb3daec71eebae6b0f39ce",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-03-08T15:11:00.923Z",
+            "modified": "2024-03-08T16:32:59.186Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViMTM5NjhhNjAwNDc0YjlmNTlmYWUiLCJpYXQiOjE3MDk5MTQxNzksImV4cCI6MTcwOTkxNzc3OX0.mXfg0MYqDKDu93aPJpQdVi1Q27ntYL2319eiDAByHIY"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombreCategoria\": \"Joyería artesanal 10\",\n  \"descripcion\": \"Belleza estética de cada pieza hechas con la mejor calidad\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "31346215-631e-42b9-b54d-438a9261daeb",
+            "colId": "94a29025-44de-4d2e-b858-130639b4410a",
+            "containerId": "",
+            "name": "categoriasDelete",
+            "url": "http://localhost:1000/empresa/v1/categorias/65eb2908e994e23df48b34c2",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-03-08T16:33:44.853Z",
+            "modified": "2024-03-08T17:14:26.707Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViMTM5NjhhNjAwNDc0YjlmNTlmYWUiLCJpYXQiOjE3MDk5MTgwNTQsImV4cCI6MTcwOTkyMTY1NH0.HNGpmP5B0gN_Y42oiSLVoqq6E4j--nZkzlMmyx9n2nI"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

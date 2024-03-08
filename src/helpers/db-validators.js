@@ -1,6 +1,7 @@
 import Role from '../role/role.model.js';
 import User from '../user/user.model.js';
 import Producto from '../productos/producto.model.js';
+import Categorias from '../categorias/categorias.model.js';
 
 export const esRoleValido = async (role = '') => {
     const existeRol = await Role.findOne({ role });
@@ -39,5 +40,13 @@ export const existeProductoById = async (id = '') => {
 
     if (!existeProducto) {
         throw new Error(`El ID: ${id} No existe`);
+    }
+}
+
+export const categoriaExistente = async (nombre = '') => {
+    const categoriaExistente = await Categorias.findOne({ nombre });
+
+    if (categoriaExistente) {
+        throw new Error(`La categoria ${nombre} ya ha sido registrado`);
     }
 }

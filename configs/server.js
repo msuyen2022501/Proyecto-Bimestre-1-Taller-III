@@ -7,7 +7,8 @@ import morgan from 'morgan';
 import { dbConnection } from './mongo.js';
 import userRoutes from '../src/user/user.routes.js';
 import authRoutes from '../src/auth/auth.routes.js';
-import productRoutes from '../src/productos/producto.routes.js'
+import productRoutes from '../src/productos/producto.routes.js';
+import categoriasRoutes from '../src/categorias/categorias.routes.js';
 
 class Server {
     constructor() {
@@ -16,6 +17,7 @@ class Server {
         this.usuarioPath = '/empresa/v1/users';
         this.authPath = '/empresa/v1/auth';
         this.productoPath = '/empresa/v1/products';
+        this.categoriasPath = '/empresa/v1/categorias'
 
         this.middlewares(); 
         this.conectarDB(); 
@@ -38,6 +40,7 @@ class Server {
         this.app.use(this.usuarioPath, userRoutes);
         this.app.use(this.authPath, authRoutes);
         this.app.use(this.productoPath, productRoutes);
+        this.app.use(this.categoriasPath, categoriasRoutes);
     }
 
     listen() {
