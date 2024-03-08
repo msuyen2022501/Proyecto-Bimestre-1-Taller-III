@@ -1,10 +1,11 @@
-const { Router } = require('express');
-const { check } = require('express-validator');
+import { Router } from 'express';
+import { check } from 'express-validator';
 
-const { validarCampos } = require('../middlewares/validar-campos');
-const { existenteEmail, existeUsuarioById } = require('../helpers/db-validators');
+import { validarCampos } from '../middlewares/validar-campos.js';
+import { validarJWT } from '../middlewares/validar-jwt.js';
+import { existenteEmail, existeUsuarioById } from '../helpers/db-validators.js';
 
-const { usuariosPost, usuariosGet, getUsuarioByid, usuariosPut, usuariosPutRole, usuariosDelete, usuariosClientDelete, usuariosClientPut, usuariosLogin } = require('../controllers/user.controller');
+import { usuariosPost, usuariosGet, usuariosPut, usuariosPutRole, usuariosDelete, usuariosLogin } from './user.controller.js';
 
 const router = Router();
 
@@ -28,24 +29,24 @@ router.post(
 
 router.get("/", usuariosGet);
 
-router.get(
-    "/:id",
-    [
-        check("id", "El id no es un formato válido de MongoDB").isMongoId(),
-        check("id").custom(existeUsuarioById),
-        validarCampos
-    ], getUsuarioByid);
-
 router.put(
     "/:id",
+    validarJWT,
     [
         check("id", "El id no es un formato válido de MongoDB").isMongoId(),
         check("id").custom(existeUsuarioById),
+        check("nombre", "El nombre es obligatorio").not().isEmpty(),
+        check("password", "El password debe tener más de 6 letras").isLength({ min: 6 }),
+        check("correo", "El correo debe ser un correo").isEmail(),
         validarCampos
-    ], usuariosPut);
+    ], 
+    usuariosPut
+);
+
 
 router.put(
     "/role/:id",
+    validarJWT,
     [
         check("id", "El id no es un formato válido de MongoDB").isMongoId(),
         check("id").custom(existeUsuarioById),
@@ -54,22 +55,11 @@ router.put(
 
 router.delete(
     "/:id",
+    validarJWT,
     [
         check("id", "El id no es un formato válido de MongoDB").isMongoId(),
         check("id").custom(existeUsuarioById),
         validarCampos
     ], usuariosDelete);
 
-router.delete(
-    "/cliente/:id",
-    [
-        check('correo', 'Este correo no sirve').isEmail(),
-    ], usuariosClientDelete);
-
-router.put(
-    "/cliente/:id",
-    [
-        check('correo', 'Este correo no sirve').isEmail(),
-    ], usuariosClientPut);
-
-module.exports = router;
+export default router;
