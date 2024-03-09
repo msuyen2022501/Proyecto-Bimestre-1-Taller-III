@@ -56,3 +56,16 @@ export const agregarAlCarrito = async (req, res) => {
         return res.status(500).json({ mensaje: 'Error al agregar producto al carrito' });
     }
 };
+
+export const obtenerHistorialCompras = async (req, res) => {
+    try {
+        const usuarioId = req.usuarioId;
+  
+        const historialCompras = await Carrito.find({ usuario: usuarioId }).populate('productos.producto');
+  
+        res.status(200).json({ historialCompras });
+    } catch (error) {
+        console.error('Error al obtener el historial de compras:', error);
+        res.status(500).json({ mensaje: 'Error al obtener el historial de compras' });
+    }
+};

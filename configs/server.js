@@ -47,6 +47,7 @@ class Server {
     this.app.use(this.categoriasPath, categoriasRoutes);
     this.app.use(this.facturasPath, facturasRoutes);
     this.app.use(this.carritoPath, carritoRoutes);
+
   }
 
   listen() {
