@@ -1,49 +1,29 @@
 import mongoose from 'mongoose';
 
-const productoSchema = new mongoose.Schema({
-    nombre: {
-        type: String,
-        required: true
-    },
-    precio: {
-        type: Number,
-        required: true
-    },
-    stock: {
-        type: Number,
-        required: true
-    }
-});
-
-const Producto = mongoose.model('Producto', productoSchema);
-
-const facturaSchema = new mongoose.Schema({
-    usuarioId: {
+const facturaEsquema = new mongoose.Schema({
+  items: [
+    {
+      producto: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Usuario',
+        ref: 'Producto',
         required: true
-    },
-    productos: [{
-        producto: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Producto', 
-            required: true
-        },
-        cantidad: {
-            type: Number,
-            required: true
-        }
-    }],
-    total: {
+      },
+      precioUnitario: {
         type: Number,
         required: true
-    },
-    fecha: {
-        type: Date,
-        default: Date.now
+      },
+      cantidad: {
+        type: Number,
+        required: true
+      }
     }
+  ],
+  montoTotal: {
+    type: Number,
+    required: true
+  }
 });
 
-const Factura = mongoose.model('Factura', facturaSchema);
+const Factura = mongoose.model('Factura', facturaEsquema);
 
-export { Producto, Factura };
+export default Factura;

@@ -1,39 +1,46 @@
-import jwt from 'jsonwebtoken';
-import Usuario from '../user/user.model.js';
+import jwt from "jsonwebtoken";
+import Usuario from "../user/user.model.js";
 
 export const validarJWT = async (req, res, next) => {
-    const token = req.header("x-token");
+  const token = req.header("x-token");
 
-    if (!token) {
-        return res.status(401).json({
-            msg: "No hay token en la petición",
-        });
+  console.log("Token recibido:", token);
+
+  if (!token) {
+    console.log("No se encontró ningún token en la solicitud");
+    return res.status(401).json({
+      mensaje: "No hay token en la petición",
+    });
+  }
+
+  try {
+    const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
+
+    console.log("Token validado correctamente. ID de usuario:", uid);
+
+    const usuario = await Usuario.findById(uid);
+
+    if (!usuario) {
+      console.log("El usuario no existe en la base de datos");
+      return res.status(401).json({
+        mensaje: "Usuario no existe en la base de datos",
+      });
     }
 
-    try {
-        const { uid } = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
-
-        const usuario = await Usuario.findById(uid);
-
-        if (!usuario) {
-            return res.status(401).json({
-                msg: 'Usuario no existe en la base de datos'
-            });
-        }
-
-        if (!usuario.estado) {
-            return res.status(401).json({
-                msg: 'Token no válido - usuario con estado:false'
-            });
-        }
-
-        req.usuario = usuario;
-
-        next();
-    } catch (e) {
-        console.log(e);
-        res.status(401).json({
-            msg: "Token no válido",
-        });
+    if (!usuario.estado) {
+      console.log("El usuario tiene estado 'false'");
+      return res.status(401).json({
+        mensaje: "Token no válido - usuario con estado:false",
+      });
     }
-}
+
+    req.usuarioId = uid;
+
+    next();
+  } catch (e) {
+    console.error("Error al validar el token:", e);
+    res.status(401).json({
+      mensaje: "Token no válido",
+    });
+  }
+};
