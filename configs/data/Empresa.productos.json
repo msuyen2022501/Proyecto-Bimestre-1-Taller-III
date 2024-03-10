@@ -1,0 +1,115 @@
+[{
+  "_id": {
+    "$oid": "65d2e28ae634b6ca1a13575d"
+  },
+  "nombre": "Anillos",
+  "categoria": "Joyería artesanal",
+  "stock": 13,
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ea7b5137ee87a21df6d12d"
+  },
+  "nombre": "collares",
+  "categoria": "Joyería artesanal",
+  "stock": 1,
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ea7b8637ee87a21df6d131"
+  },
+  "nombre": "Colgante",
+  "categoria": "Joyería artesanal",
+  "stock": 1,
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ea7d94e468409f0502572c"
+  },
+  "nombre": "Cadena",
+  "categoria": "Joyería artesanal",
+  "stock": 0,
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65eab0171cbcec6c354d66b0"
+  },
+  "nombre": "anillos 2",
+  "categoria": "Joyería artesanal",
+  "stock": 0,
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ebf2a3dfd1d40b059d5d25"
+  },
+  "nombre": "anillos",
+  "categoria": "Joyería artesanal",
+  "stock": 0,
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ecdcf1dcbefe2d798f31a5"
+  },
+  "nombre": "Anillos 2",
+  "categoria": "Joyería artesanal",
+  "precio": 10,
+  "stock": 0,
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ecddaf804953a4e73b8ecd"
+  },
+  "nombre": "Anillos 3",
+  "categoria": "Joyería artesanal",
+  "precio": 10,
+  "stock": 0,
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ed0f82a6b86f17021b86e2"
+  },
+  "nombre": "Anillos 1",
+  "categoria": "Joyería artesanal",
+  "precio": 10,
+  "stock": 10,
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ed4a14fcef318b2fb32743"
+  },
+  "nombre": "Anillos 0",
+  "categoria": "Joyería artesanal 1",
+  "precio": 10,
+  "stock": 10,
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ed526edb6bd6e114b366b5"
+  },
+  "nombre": "Pulsera",
+  "categoria": "Joyería artesanal",
+  "precio": 1000,
+  "stock": 5,
+  "estado": true,
+  "__v": 0
+}]

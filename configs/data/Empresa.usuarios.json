@@ -1,0 +1,55 @@
+[{
+  "_id": {
+    "$oid": "65ea7664f55e0de916da99ba"
+  },
+  "nombre": "Mario",
+  "correo": "Mario@email.com",
+  "password": "$2a$10$79.Mf9QYOTiPoj0sJ3RQDO8sqVLxntL5XvZkWIi8.y5/3Gnxk74U.",
+  "role": "CLIENT_ROLE",
+  "estado": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ebea214e95d70157c0ac4d"
+  },
+  "nombre": "Mario2",
+  "correo": "Mario2@email.com",
+  "password": "$2a$10$ljtF5XjCRZaD3KPqYeWGWOPn.Bb/Bh7VVOdh.UcJA/DaDjN6Uxz/O",
+  "role": "ADMIN_ROLE",
+  "estado": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ece22811a2961eaeaee755"
+  },
+  "nombre": "David",
+  "correo": "David@email.com",
+  "password": "$2a$10$TL/WPjaWTyv9852tR/DRnu.0.PIzdqr3CXcZWm00NOUW/g6gj8Mle",
+  "role": "ADMIN_ROLE",
+  "estado": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ed1292fd3903e74cee06f1"
+  },
+  "nombre": "Suyen",
+  "correo": "Suyen@email.com",
+  "password": "$2a$10$.N9YeUlXj6.D9GlGRuPgAu34omLUJgQkeXo.MTTsnj6sfb8zm5Igy",
+  "role": "ADMIN_ROLE",
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ed50fedb6bd6e114b36688"
+  },
+  "nombre": "Jorge Estuardo Suyen",
+  "correo": "Jorge_esturado@email.com",
+  "password": "123456",
+  "role": "ADMIN_ROLE",
+  "estado": true,
+  "__v": 0
+}]

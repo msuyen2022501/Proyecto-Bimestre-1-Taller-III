@@ -60,10 +60,18 @@ export const agregarAlCarrito = async (req, res) => {
 export const obtenerHistorialCompras = async (req, res) => {
     try {
         const usuarioId = req.usuarioId;
-  
+
         const historialCompras = await Carrito.find({ usuario: usuarioId }).populate('productos.producto');
-  
-        res.status(200).json({ historialCompras });
+
+        let totalCompras = 0;
+
+        historialCompras.forEach(compra => {
+            compra.productos.forEach(producto => {
+                totalCompras += producto.producto.precio * producto.cantidad;
+            });
+        });
+
+        res.status(200).json({ historialCompras, totalCompras });
     } catch (error) {
         console.error('Error al obtener el historial de compras:', error);
         res.status(500).json({ mensaje: 'Error al obtener el historial de compras' });

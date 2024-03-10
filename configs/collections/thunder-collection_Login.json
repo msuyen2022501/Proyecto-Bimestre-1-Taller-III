@@ -1,25 +1,25 @@
 {
     "client": "Thunder Client",
     "collectionName": "Login",
-    "dateExported": "2024-03-08T06:51:26.932Z",
+    "dateExported": "2024-03-10T06:34:02.943Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "b2930ad6-cbe7-4f51-9c72-1631d356dd70",
-            "colId": "dec6b66c-48ae-4773-8143-a7de8a90a1ac",
+            "_id": "4f2415bd-989d-4cc0-9989-5b62c6405e6d",
+            "colId": "9791f909-43ee-4297-90de-327075df942b",
             "containerId": "",
             "name": "usuarioLogin",
             "url": "http://localhost:1000/empresa/v1/users/login",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-03-08T00:12:15.211Z",
-            "modified": "2024-03-08T05:19:46.517Z",
+            "created": "2024-03-08T22:53:25.572Z",
+            "modified": "2024-03-10T06:20:35.741Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"correo\" : \"Mario1@email.com\",\n  \"password\" : \"123456\"\n  \n}",
+                "raw": "{\n  \"correo\" : \"Jorge@email.com\",\n  \"password\" : \"123456\"\n}                     ",
                 "form": []
             },
             "reqType": "post",

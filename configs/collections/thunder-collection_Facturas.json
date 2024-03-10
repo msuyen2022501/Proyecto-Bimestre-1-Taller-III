@@ -1,0 +1,67 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Facturas",
+    "dateExported": "2024-03-10T06:34:26.127Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "9bc5320b-2e02-4d40-851c-3ef6c7e65d6e",
+            "colId": "942f035b-6540-4eba-90e1-d758c5a6a087",
+            "containerId": "",
+            "name": "ProcesoDeCompras",
+            "url": "http://localhost:1000/empresa/v1/facturas/factura",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-03-09T00:49:47.528Z",
+            "modified": "2024-03-10T06:30:55.611Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkNTBmZWRiNmJkNmUxMTRiMzY2ODgiLCJpYXQiOjE3MTAwNTE2MzYsImV4cCI6MTcxMDA1NTIzNn0.IsM-qqyiBvf-TBRzRwdMfM3no0lZhWln7V329-5kjGQ"
+                }
+            ],
+            "params": [],
+            "reqType": "put",
+            "tests": []
+        },
+        {
+            "_id": "ffa64313-13e9-4131-871f-a4beb2dcf2e5",
+            "colId": "942f035b-6540-4eba-90e1-d758c5a6a087",
+            "containerId": "",
+            "name": "editarFactura",
+            "url": "http://localhost:1000/empresa/v1/facturas/65ed539fdb6bd6e114b366e8",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-03-10T02:02:27.837Z",
+            "modified": "2024-03-10T06:31:45.403Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkNTBmZWRiNmJkNmUxMTRiMzY2ODgiLCJpYXQiOjE3MTAwNTE2MzYsImV4cCI6MTcxMDA1NTIzNn0.IsM-qqyiBvf-TBRzRwdMfM3no0lZhWln7V329-5kjGQ"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"productos\": [\n    {\n      \"producto\": \"65ea7b5137ee87a21df6d12d\",\n      \"cantidad\": 1\n    }\n  ]\n}\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "9874a6ba-df23-48e4-9cbe-d10359bf6551",
+            "colId": "942f035b-6540-4eba-90e1-d758c5a6a087",
+            "containerId": "",
+            "name": "VisualizarFacturasUsuario",
+            "url": "http://localhost:1000/empresa/v1/facturas/65ed50fedb6bd6e114b36688/facturas",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-03-10T05:07:44.751Z",
+            "modified": "2024-03-10T06:32:10.270Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

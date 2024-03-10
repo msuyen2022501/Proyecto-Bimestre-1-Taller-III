@@ -1,84 +1,83 @@
 {
     "client": "Thunder Client",
     "collectionName": "Usuarios",
-    "dateExported": "2024-03-08T06:51:20.076Z",
+    "dateExported": "2024-03-10T06:33:44.551Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "3a8b5c1f-74bf-4ff0-b551-9f04f8426e69",
-            "colId": "f707947d-a8b0-4ecb-9f3f-869c249126fd",
+            "_id": "d2880c72-7820-4cc7-8ae7-2f41582923fd",
+            "colId": "40871c59-dfd8-461e-843e-86eda74ddbc7",
             "containerId": "",
             "name": "usuariosPost",
             "url": "http://localhost:1000/empresa/v1/users",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-03-07T23:57:10.230Z",
-            "modified": "2024-03-08T02:56:42.795Z",
+            "created": "2024-03-08T22:53:25.654Z",
+            "modified": "2024-03-10T06:19:41.179Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombre\":\"Mario1\",\n  \"correo\":\"Mario1@email.com\",\n  \"password\":\"123456\"\n}",
+                "raw": "{\n  \"nombre\":\"Jorge\",\n  \"correo\":\"Jorge@email.com\",\n  \"password\":\"123456\",\n  \"role\": \"ADMIN_ROLE\"\n}",
                 "form": []
             },
             "reqType": "post",
             "tests": []
         },
         {
-            "_id": "2ae23295-206e-4641-b416-97eb09fd54a9",
-            "colId": "f707947d-a8b0-4ecb-9f3f-869c249126fd",
+            "_id": "b9ad5bd2-2318-4fed-8020-7b7291a66b16",
+            "colId": "40871c59-dfd8-461e-843e-86eda74ddbc7",
             "containerId": "",
             "name": "usuariosGet",
             "url": "http://localhost:1000/empresa/v1/users",
             "method": "GET",
             "sortNum": 20000,
-            "created": "2024-03-07T23:57:10.231Z",
-            "modified": "2024-03-08T00:04:33.206Z",
+            "created": "2024-03-08T22:53:25.655Z",
+            "modified": "2024-03-08T22:53:25.655Z",
             "headers": [],
             "params": [],
-            "reqType": "get",
             "tests": []
         },
         {
-            "_id": "e95a42e8-fc41-4ca4-a853-45375e74b0d2",
-            "colId": "f707947d-a8b0-4ecb-9f3f-869c249126fd",
+            "_id": "d940b399-9437-4e91-8771-4e221e44d4d2",
+            "colId": "40871c59-dfd8-461e-843e-86eda74ddbc7",
             "containerId": "",
             "name": "rolePut",
-            "url": "http://localhost:1000/empresa/v1/users/role/65d2dc64fe39abed2c8c7505",
+            "url": "http://localhost:1000/empresa/v1/users/role/65ed50fedb6bd6e114b36688",
             "method": "PUT",
             "sortNum": 40000,
-            "created": "2024-03-07T23:57:10.233Z",
-            "modified": "2024-03-08T02:13:04.292Z",
+            "created": "2024-03-08T22:53:25.656Z",
+            "modified": "2024-03-10T06:20:56.365Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhNWE0MjIwMzM2N2UxMGVkY2M0MWYiLCJpYXQiOjE3MDk4NTc4OTMsImV4cCI6MTcwOTg2MTQ5M30.URVd0N5vZFgses6AUxgoWjlJBOMTbEMDLKQSj7U0BCY"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkNTBmZWRiNmJkNmUxMTRiMzY2ODgiLCJpYXQiOjE3MTAwNTE2MzYsImV4cCI6MTcxMDA1NTIzNn0.IsM-qqyiBvf-TBRzRwdMfM3no0lZhWln7V329-5kjGQ"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\r\n    \"role\": \"ADMIN_ROLE\",\r\n    \"correoUsuario\": \"admin2@email.com\"\r\n}\r\n",
+                "raw": "{\n    \"role\": \"ADMIN_ROLE\",\n    \"correoUsuario\": \"Jorge@email.com\"\n}\n",
                 "form": []
             },
             "reqType": "put",
             "tests": []
         },
         {
-            "_id": "5b806567-4498-4d50-939f-9479e2fff2ec",
-            "colId": "f707947d-a8b0-4ecb-9f3f-869c249126fd",
+            "_id": "11caa394-4f9f-4cba-ba52-c4bec322c085",
+            "colId": "40871c59-dfd8-461e-843e-86eda74ddbc7",
             "containerId": "",
             "name": "usuariosDelete",
-            "url": "http://localhost:1000/empresa/v1/users/65ea7664f55e0de916da99ba",
+            "url": "http://localhost:1000/empresa/v1/users/65ece22811a2961eaeaee755",
             "method": "DELETE",
             "sortNum": 50000,
-            "created": "2024-03-07T23:57:10.234Z",
-            "modified": "2024-03-08T02:22:57.617Z",
+            "created": "2024-03-08T22:53:25.657Z",
+            "modified": "2024-03-10T06:21:26.388Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhNzY2NGY1NWUwZGU5MTZkYTk5YmEiLCJpYXQiOjE3MDk4NjQ1NTYsImV4cCI6MTcwOTg2ODE1Nn0.FkpSLnIneTyAIralNpUQAMl8PbNSqpvPJ2nP7b5dG-g"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkNTBmZWRiNmJkNmUxMTRiMzY2ODgiLCJpYXQiOjE3MTAwNTE2MzYsImV4cCI6MTcxMDA1NTIzNn0.IsM-qqyiBvf-TBRzRwdMfM3no0lZhWln7V329-5kjGQ"
                 }
             ],
             "params": [],
@@ -86,25 +85,126 @@
             "tests": []
         },
         {
-            "_id": "52d4662b-e0f3-41c3-8e22-8e26f3963e48",
-            "colId": "f707947d-a8b0-4ecb-9f3f-869c249126fd",
+            "_id": "a37d7dea-62de-4d29-9f48-116e016d3190",
+            "colId": "40871c59-dfd8-461e-843e-86eda74ddbc7",
             "containerId": "",
             "name": "usuariosPut",
-            "url": "http://localhost:1000/empresa/v1/users/65ea5a42203367e10edcc41f",
+            "url": "http://localhost:1000/empresa/v1/users/65ed50fedb6bd6e114b36688",
             "method": "PUT",
             "sortNum": 60000,
-            "created": "2024-03-08T01:23:43.450Z",
-            "modified": "2024-03-08T02:20:48.428Z",
+            "created": "2024-03-08T22:53:25.658Z",
+            "modified": "2024-03-10T06:22:19.887Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhNWE0MjIwMzM2N2UxMGVkY2M0MWYiLCJpYXQiOjE3MDk4NjEzNzksImV4cCI6MTcwOTg2NDk3OX0.aPkcrzkn0bD6PT3kXQQCJ5NinYrDVs2J5LqMrvPf7ao"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkNTBmZWRiNmJkNmUxMTRiMzY2ODgiLCJpYXQiOjE3MTAwNTE2MzYsImV4cCI6MTcxMDA1NTIzNn0.IsM-qqyiBvf-TBRzRwdMfM3no0lZhWln7V329-5kjGQ"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\r\n    \"correo\": \"Mario123@email.com\",\r\n    \"nombre\": \"Nuevo nombre\",\r\n    \"password\": \"123456\"\r\n}\r\n",
+                "raw": "{\n    \"correo\": \"Jorge_esturado@email.com\",\n    \"nombre\": \"Jorge Estuardo Suyen\",\n    \"password\": \"123456\"\n}\n",
+                "form": []
+            },
+            "reqType": "put",
+            "tests": []
+        },
+        {
+            "_id": "96d02ace-edaf-4966-9cdf-d3712f2d0798",
+            "colId": "40871c59-dfd8-461e-843e-86eda74ddbc7",
+            "containerId": "",
+            "name": "productosMasVendidos",
+            "url": "http://localhost:1000/empresa/v1/products/productosMasVendidos",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2024-03-10T05:27:57.633Z",
+            "modified": "2024-03-10T06:22:46.099Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkNTBmZWRiNmJkNmUxMTRiMzY2ODgiLCJpYXQiOjE3MTAwNTE2MzYsImV4cCI6MTcxMDA1NTIzNn0.IsM-qqyiBvf-TBRzRwdMfM3no0lZhWln7V329-5kjGQ"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7edabffc-216b-45dc-9fec-eb46883c6422",
+            "colId": "40871c59-dfd8-461e-843e-86eda74ddbc7",
+            "containerId": "",
+            "name": "buscarProductosPorNombre",
+            "url": "http://localhost:1000/empresa/v1/products/buscarProductosPorNombre",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2024-03-10T05:38:34.150Z",
+            "modified": "2024-03-10T06:23:27.005Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkNTBmZWRiNmJkNmUxMTRiMzY2ODgiLCJpYXQiOjE3MTAwNTE2MzYsImV4cCI6MTcxMDA1NTIzNn0.IsM-qqyiBvf-TBRzRwdMfM3no0lZhWln7V329-5kjGQ"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\" : \"collares\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ab1fff43-e921-44ca-8641-9fdb4015b9a5",
+            "colId": "40871c59-dfd8-461e-843e-86eda74ddbc7",
+            "containerId": "",
+            "name": "VisualizarCategorias",
+            "url": "http://localhost:1000/empresa/v1/categorias",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-03-10T05:49:11.767Z",
+            "modified": "2024-03-10T05:49:21.731Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ba1b1109-e6bf-445b-93ce-08baf3b0045d",
+            "colId": "40871c59-dfd8-461e-843e-86eda74ddbc7",
+            "containerId": "",
+            "name": "buscarProductosPorCategoria",
+            "url": "http://localhost:1000/empresa/v1/products/buscar-por-categoria",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2024-03-10T05:55:32.906Z",
+            "modified": "2024-03-10T06:24:04.122Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{ \n  \"categoria\": \"Joyería artesanal 1\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "62eae294-a050-4e43-98ff-50725a761be2",
+            "colId": "40871c59-dfd8-461e-843e-86eda74ddbc7",
+            "containerId": "",
+            "name": "eliminarCuenta",
+            "url": "http://localhost:1000/empresa/v1/users/eliminar-cuenta/65ea7e6be7ca68607315622b",
+            "method": "DELETE",
+            "sortNum": 110000,
+            "created": "2024-03-10T06:09:49.553Z",
+            "modified": "2024-03-10T06:16:19.377Z",
+            "headers": [
+                {
+                    "name": "x-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVhN2U2YmU3Y2E2ODYwNzMxNTYyMmIiLCJpYXQiOjE3MTAwNDk2NTUsImV4cCI6MTcxMDA1MzI1NX0.mDXz8HZfROE8GUQF6UtXu3f4W_zL76NEJcHgxfqr9MM"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\r\n    \"confirmacion\": \"CONFIRMAR\",\r\n    \"contrasenaActual\": \"123456\"\r\n}",
                 "form": []
             },
             "tests": []

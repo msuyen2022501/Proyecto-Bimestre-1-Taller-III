@@ -8,7 +8,9 @@ import {
   productosPut,
   productosDelete,
   productosAgotados,
-  productosMasVendidos
+  productosMasVendidos,
+  buscarProductosPorNombre,
+  buscarProductosPorCategoria
 } from "./producto.controller.js";
 import {
   productoExistente,
@@ -33,6 +35,10 @@ router.get(
 router.post('/productosAgotados', validarJWT, productosAgotados); 
 
 router.post('/productosMasVendidos', validarJWT, productosMasVendidos);
+
+router.post('/buscarProductosPorNombre', validarJWT, buscarProductosPorNombre);
+
+router.post('/buscar-por-categoria', buscarProductosPorCategoria); 
 
 router.put(
   "/:id",
@@ -60,11 +66,14 @@ router.post(
   [
     check("nombre", "El nombre es obligatorio").not().isEmpty(),
     check("categoria", "La categoría es obligatoria").not().isEmpty(),
+    check("precio", "El precio debe ser un número").isNumeric(),
     check("stock", "El stock debe ser un número").isNumeric(),
     check("nombre").custom(productoExistente),
     validarCampos,
   ],
   productoPost
 );
+
+
 
 export default router;

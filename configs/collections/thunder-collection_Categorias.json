@@ -1,89 +1,92 @@
 {
     "client": "Thunder Client",
     "collectionName": "Categorias",
-    "dateExported": "2024-03-08T17:20:23.915Z",
+    "dateExported": "2024-03-10T06:34:14.855Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "43a2d245-4224-413c-a2dd-66168d7baa0b",
-            "colId": "94a29025-44de-4d2e-b858-130639b4410a",
+            "_id": "3f0fdff2-0de7-4d00-8acc-46cebdda44e3",
+            "colId": "c1f1d841-8e7b-473a-a81a-448193f021de",
             "containerId": "",
             "name": "categoriasPost",
             "url": "http://localhost:1000/empresa/v1/categorias",
             "method": "POST",
             "sortNum": 10000,
-            "created": "2024-03-08T14:38:46.539Z",
-            "modified": "2024-03-08T16:32:46.818Z",
+            "created": "2024-03-08T22:53:25.527Z",
+            "modified": "2024-03-10T06:28:44.232Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViMTM5NjhhNjAwNDc0YjlmNTlmYWUiLCJpYXQiOjE3MDk5MTQxNzksImV4cCI6MTcwOTkxNzc3OX0.mXfg0MYqDKDu93aPJpQdVi1Q27ntYL2319eiDAByHIY"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkNTBmZWRiNmJkNmUxMTRiMzY2ODgiLCJpYXQiOjE3MTAwNTE2MzYsImV4cCI6MTcxMDA1NTIzNn0.IsM-qqyiBvf-TBRzRwdMfM3no0lZhWln7V329-5kjGQ"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombreCategoria\" : \"Joyería artesanal 5\",\n  \"descripcion\": \"Belleza estética de cada pieza\"\n}",
+                "raw": "{\n  \"nombreCategoria\" : \"Relojes\",\n  \"descripcion\": \"Relojes exoticos y clasicos\"\n}",
                 "form": []
             },
+            "reqType": "post",
             "tests": []
         },
         {
-            "_id": "c24ed68c-f794-44df-a4f8-5b35b7fb1c3e",
-            "colId": "94a29025-44de-4d2e-b858-130639b4410a",
+            "_id": "f386dd7d-03a5-4c88-a4e7-99315c4ce8bb",
+            "colId": "c1f1d841-8e7b-473a-a81a-448193f021de",
             "containerId": "",
             "name": "categoriasGet",
             "url": "http://localhost:1000/empresa/v1/categorias",
             "method": "GET",
             "sortNum": 20000,
-            "created": "2024-03-08T15:06:45.368Z",
-            "modified": "2024-03-08T15:06:50.637Z",
+            "created": "2024-03-08T22:53:25.528Z",
+            "modified": "2024-03-08T22:53:25.528Z",
             "headers": [],
             "params": [],
             "tests": []
         },
         {
-            "_id": "9b22fd26-e4dd-4705-a116-abe25cacf3c1",
-            "colId": "94a29025-44de-4d2e-b858-130639b4410a",
+            "_id": "2728032e-e6a2-4977-bbfb-38bb99b1e6b1",
+            "colId": "c1f1d841-8e7b-473a-a81a-448193f021de",
             "containerId": "",
             "name": "categoriasPut",
-            "url": "http://localhost:1000/empresa/v1/categorias/65eb3daec71eebae6b0f39ce",
+            "url": "http://localhost:1000/empresa/v1/categorias/65ed531cdb6bd6e114b366ce",
             "method": "PUT",
             "sortNum": 30000,
-            "created": "2024-03-08T15:11:00.923Z",
-            "modified": "2024-03-08T16:32:59.186Z",
+            "created": "2024-03-08T22:53:25.529Z",
+            "modified": "2024-03-10T06:29:30.295Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViMTM5NjhhNjAwNDc0YjlmNTlmYWUiLCJpYXQiOjE3MDk5MTQxNzksImV4cCI6MTcwOTkxNzc3OX0.mXfg0MYqDKDu93aPJpQdVi1Q27ntYL2319eiDAByHIY"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkNTBmZWRiNmJkNmUxMTRiMzY2ODgiLCJpYXQiOjE3MTAwNTE2MzYsImV4cCI6MTcxMDA1NTIzNn0.IsM-qqyiBvf-TBRzRwdMfM3no0lZhWln7V329-5kjGQ"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"nombreCategoria\": \"Joyería artesanal 10\",\n  \"descripcion\": \"Belleza estética de cada pieza hechas con la mejor calidad\"\n}",
+                "raw": "{\n  \"nombreCategoria\": \"Relojes\",\n  \"descripcion\": \"Belleza de relojes clasicos\"\n}",
                 "form": []
             },
+            "reqType": "put",
             "tests": []
         },
         {
-            "_id": "31346215-631e-42b9-b54d-438a9261daeb",
-            "colId": "94a29025-44de-4d2e-b858-130639b4410a",
+            "_id": "c15acc82-68e7-46fe-a63b-ac4c99b65366",
+            "colId": "c1f1d841-8e7b-473a-a81a-448193f021de",
             "containerId": "",
             "name": "categoriasDelete",
-            "url": "http://localhost:1000/empresa/v1/categorias/65eb2908e994e23df48b34c2",
+            "url": "http://localhost:1000/empresa/v1/categorias/65ed498ffcef318b2fb32739",
             "method": "DELETE",
             "sortNum": 40000,
-            "created": "2024-03-08T16:33:44.853Z",
-            "modified": "2024-03-08T17:14:26.707Z",
+            "created": "2024-03-08T22:53:25.530Z",
+            "modified": "2024-03-10T06:29:56.489Z",
             "headers": [
                 {
                     "name": "x-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWViMTM5NjhhNjAwNDc0YjlmNTlmYWUiLCJpYXQiOjE3MDk5MTgwNTQsImV4cCI6MTcwOTkyMTY1NH0.HNGpmP5B0gN_Y42oiSLVoqq6E4j--nZkzlMmyx9n2nI"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWVkNTBmZWRiNmJkNmUxMTRiMzY2ODgiLCJpYXQiOjE3MTAwNTE2MzYsImV4cCI6MTcxMDA1NTIzNn0.IsM-qqyiBvf-TBRzRwdMfM3no0lZhWln7V329-5kjGQ"
                 }
             ],
             "params": [],
+            "reqType": "del",
             "tests": []
         }
     ]

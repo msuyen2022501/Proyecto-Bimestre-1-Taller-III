@@ -5,16 +5,17 @@ const productosGet = async (req, res = response) => {
     const { limite, desde } = req.query;
     const query = { estado: true };
 
-    const [total, producto] = await Promise.all([
+    const [total, productos] = await Promise.all([
         Producto.countDocuments(query),
         Producto.find(query)
+            .select('nombre categoria precio stock') 
             .skip(Number(desde))
             .limit(Number(limite))
     ]);
 
     res.status(200).json({
         total,
-        producto
+        productos
     });
 }
 
@@ -85,12 +86,12 @@ const productosDelete = async (req, res) => {
 }
 
 const productoPost = async (req, res) => {
-    const { nombre, categoria, stock } = req.body;
+    const { nombre, categoria, precio, stock } = req.body;
 
     try {
         await productoExistente(nombre);
 
-        const producto = new Producto({ nombre, categoria, stock });
+        const producto = new Producto({ nombre, categoria, precio, stock, estado: true }); // Asegúrate de establecer el estado como true
         await producto.save();
 
         res.status(200).json({
@@ -103,6 +104,7 @@ const productoPost = async (req, res) => {
         });
     }
 }
+
 
 const productosAgotados = async (req, res) => {
     try {
@@ -139,6 +141,63 @@ const productosMasVendidos = async (req, res) => {
     }
 }
 
+const buscarProductosPorNombre = async (req, res) => {
+    const { nombre } = req.body;
+
+    if (!nombre || nombre.trim() === '') {
+        return res.status(400).json({
+            msg: 'El nombre del producto es requerido en el cuerpo de la solicitud'
+        });
+    }
+
+    try {
+        const productos = await Producto.find({ nombre: { $regex: new RegExp(nombre, 'i') } });
+
+        if (!productos || productos.length === 0) {
+            return res.status(404).json({
+                msg: 'No se encontraron productos con ese nombre'
+            });
+        }
+
+        res.status(200).json({
+            productos
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            msg: 'Error al buscar productos por nombre'
+        });
+    }
+}
+
+const buscarProductosPorCategoria = async (req, res) => {
+    const { categoria } = req.body;
+
+    if (!categoria || categoria.trim() === '') {
+        return res.status(400).json({
+            msg: 'La categoría del producto es requerida en el cuerpo de la solicitud'
+        });
+    }
+
+    try {
+        const productos = await Producto.find({ categoria: { $regex: new RegExp(categoria, 'i') } });
+
+        if (!productos || productos.length === 0) {
+            return res.status(404).json({
+                msg: 'No se encontraron productos en esa categoría'
+            });
+        }
+
+        res.status(200).json({
+            productos
+        });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            msg: 'Error al buscar productos por categoría'
+        });
+    }
+}
 
 export {
     productosGet,
@@ -147,5 +206,7 @@ export {
     getProductosByid,
     productosPut,
     productosAgotados,
-    productosMasVendidos
+    productosMasVendidos,
+    buscarProductosPorNombre,
+    buscarProductosPorCategoria
 }

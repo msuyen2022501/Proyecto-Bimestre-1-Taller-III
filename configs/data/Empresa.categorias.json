@@ -1,0 +1,18 @@
+[{
+  "_id": {
+    "$oid": "65ed4941fcef318b2fb3272a"
+  },
+  "nombreCategoria": "Joyería artesanal 5",
+  "descripcion": "Belleza estética de cada pieza",
+  "estado": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65ed531cdb6bd6e114b366ce"
+  },
+  "nombreCategoria": "Relojes",
+  "descripcion": "Belleza de relojes clasicos",
+  "estado": true,
+  "__v": 0
+}]

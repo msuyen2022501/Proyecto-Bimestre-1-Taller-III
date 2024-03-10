@@ -163,11 +163,42 @@ const usuariosLogin = async (req, res) => {
 
 }
 
+const eliminarCuenta = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { confirmacion, contrasenaActual } = req.body;
+
+        if (!confirmacion || confirmacion !== 'CONFIRMAR') {
+            return res.status(400).json({ message: "La confirmación es incorrecta" });
+        }
+
+        const usuario = await Usuario.findById(id);
+
+        if (!usuario) {
+            return res.status(404).json({ message: "Usuario no encontrado" });
+        }
+
+        const contraseñaCoincide = await bcryptjs.compare(contrasenaActual, usuario.password);
+
+        if (!contraseñaCoincide) {
+            return res.status(400).json({ message: "La contraseña actual es incorrecta" });
+        }
+
+        await Usuario.findByIdAndDelete(id);
+
+        res.status(200).json({ message: "Cuenta eliminada correctamente" });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: error.message });
+    }
+};
+
 export {
     usuariosDelete,
     usuariosPost,
     usuariosGet,
     usuariosPut,
     usuariosLogin,
-    usuariosPutRole
+    usuariosPutRole,
+    eliminarCuenta
 }

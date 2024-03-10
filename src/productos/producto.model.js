@@ -9,6 +9,10 @@ const ProductoSchema = Schema ({
         type: String,
         required: [true, 'Categoria obligatoria']
     },
+    precio: {
+        type: Number,
+        required: [true, 'Precio obligatorio']
+    },
     stock: {
         type: Number
     },
